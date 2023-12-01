@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive video</title>
+    <link rel="stylesheet" href="video.css">
+</head>
+<style>
+   body{ background-image: url('images (28).jpeg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 100% 100%;
+   }
+   div {
+       color: white;
+       font-weight: bold;
+   }
+   footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 3em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    p {
+        font-weight: bold;
+        font-size: 15px;
+    }
+</style>
+<body>
+    <div class="container">
+        
+        <div class="heading">Video Gallery</div>
+        
+        <div class="video-container">
+            
+            
+            <div class="video">
+                <video src="vid5.mp4"></video>
+            </div>
+            
+            <div class="video">
+                <video src= "vid7.mp4"></video>
+            </div>            
+        </div>
+    </div>   
+        
+    <script>
+        var video = document.querySelectorAll('video')
+        
+        video.forEach(play => play.addEventListener('click', () => {
+            play.classList.toggle('active');
+            if(play.paused) {
+                play.play()
+            }else{
+                play.paused();
+                play.currentTime = 0;
+            }
+        }));
+    </script>
+    <footer>
+    <p>&copy; 2023 ROLDAN TURTOR. All rights reserved.</p>
+  </footer>
+</body>
+</html>
